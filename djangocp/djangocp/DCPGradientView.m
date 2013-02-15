@@ -19,7 +19,7 @@
 }
 
 - (void)drawRect:(NSRect)dirtyRect {
-    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[DCPGradientView colorWithHexColorString:@"C5C5C5"]
+    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[DCPGradientView colorWithHexColorString:@"C6C6C6"]
                                                          endingColor:[DCPGradientView colorWithHexColorString:@"ACACAC"]];
     NSRect windowFrame = [self frame];
     [gradient drawInRect:windowFrame angle:90];
