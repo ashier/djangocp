@@ -85,8 +85,8 @@
     
     [task setArguments:parameters];
     
-    NSLog(@"[INFO] TaskOperation currentDirectoryPath %@", [self currentDirectoryPath]);
-    NSLog(@"[INFO] TaskOperation command %@ %@", [self launchPath], [[self arguments] componentsJoinedByString:@" "]);
+    //NSLog(@"[INFO] TaskOperation currentDirectoryPath %@", [self currentDirectoryPath]);
+    NSLog(@"[INFO] TaskOperation command \n%@ %@", [self launchPath], [[self arguments] componentsJoinedByString:@" "]);
     
     [self handlePipeOutput];
     [self handlePipeError];
@@ -174,7 +174,7 @@
             NSLog(@"[ERROR] TaskOperation Failed.");
         }
         NSLog(@"[INFO] TaskOperation Terminated.");
-        //[self cleanup];
+        
         [self initTask];
         [self reply:&result];
     }
@@ -189,7 +189,6 @@
 }
 
 - (void)dealloc {
-    NSLog(@"[INFO] TaskOperation was deallocated...");
     [self initTask];
 }
 

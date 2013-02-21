@@ -7,6 +7,8 @@
 //
 
 #import "DCPAppController.h"
+#import "DCPTaskOperationManager.h"
+#import "DCPUserDefaultKeys.h"
 
 @interface DCPAppController ()
 
@@ -18,8 +20,21 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Initialization code here.
-        NSLog(@"ashier");
+        
+        // USE BROWSE TO SET THIS UP EVENTUALLY
+        [self addDefaultsKey:[DCPUserDefaultKeys workspacePath] withValue:@"/workspace/demo/ashierdemo"];
+        
+        // CREATE TASK MANAGER
+        taskManager = [[DCPTaskOperationManager alloc] init];
+        
+        // CREATE YOUR FIRST VIRTUAL ENVIRONMENT!!!!
+        NSArray *params = [NSArray arrayWithObjects:@"--no-site-packages", @"--python=python2.7", @"djangocpdemo", nil];
+        [taskManager createEnvironment:@"djangocp" withParams:params];
+        
+        // PYTHON PATH
+        ///workspace/demo/ashierdemo/djangocpdemo/bin/python
+        
+        
     }
     
     return self;

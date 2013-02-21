@@ -7,7 +7,12 @@
 //
 
 #import "DCPBaseController.h"
+#import "DCPTaskOperationManager.h"
 
-@interface DCPAppController : DCPBaseController
+@interface DCPAppController : DCPBaseController {
+    
+    DCPTaskOperationManager *taskManager;
+    
+}
 
 @end

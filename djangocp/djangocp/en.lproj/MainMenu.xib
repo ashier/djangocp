@@ -484,7 +484,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {700, 450}}</string>
 				<int key="NSWTFlags">1954021376</int>
-				<string key="NSWindowTitle">DjangoCP</string>
+				<string key="NSWindowTitle">djangoCP</string>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
