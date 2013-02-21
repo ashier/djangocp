@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38273ED316CF1B2000AB3B03 /* DCPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 38273ED216CF1B2000AB3B03 /* DCPColor.m */; };
+		38310C7716D5D07F0098C6F5 /* DCPTaskOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38310C7616D5D07F0098C6F5 /* DCPTaskOperationManager.m */; };
 		38F2524A16CDEC870091B479 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2524916CDEC870091B479 /* Cocoa.framework */; };
 		38F2525416CDEC870091B479 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38F2525216CDEC870091B479 /* InfoPlist.strings */; };
 		38F2525616CDEC870091B479 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F2525516CDEC870091B479 /* main.m */; };
@@ -22,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38273ED116CF1B2000AB3B03 /* DCPColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPColor.h; sourceTree = "<group>"; };
+		38273ED216CF1B2000AB3B03 /* DCPColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPColor.m; sourceTree = "<group>"; };
+		38310C7516D5D07F0098C6F5 /* DCPTaskOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPTaskOperationManager.h; sourceTree = "<group>"; };
+		38310C7616D5D07F0098C6F5 /* DCPTaskOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPTaskOperationManager.m; sourceTree = "<group>"; };
 		38F2524616CDEC870091B479 /* djangocp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = djangocp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2524916CDEC870091B479 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		38F2524C16CDEC870091B479 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -61,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38310C7416D5D0480098C6F5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				38310C7516D5D07F0098C6F5 /* DCPTaskOperationManager.h */,
+				38310C7616D5D07F0098C6F5 /* DCPTaskOperationManager.m */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
 		38F2523D16CDEC870091B479 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +117,7 @@
 			children = (
 				38F2527116CDF7A30091B479 /* Core */,
 				38F2526916CDECD80091B479 /* Delegates */,
+				38310C7416D5D0480098C6F5 /* Managers */,
 				38F2526D16CDECFB0091B479 /* Controllers */,
 				38F2526C16CDECF50091B479 /* Utils */,
 				38F2526B16CDECEC0091B479 /* Models */,
@@ -158,6 +174,8 @@
 			children = (
 				38F2527816CDF9320091B479 /* DCPTaskOperation.h */,
 				38F2527916CDF9320091B479 /* DCPTaskOperation.m */,
+				38273ED116CF1B2000AB3B03 /* DCPColor.h */,
+				38273ED216CF1B2000AB3B03 /* DCPColor.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -277,6 +295,8 @@
 				38F2527A16CDF9320091B479 /* DCPTaskOperation.m in Sources */,
 				38F2527D16CDF9550091B479 /* DCPUserDefaultKeys.m in Sources */,
 				38F2528116CDFAA80091B479 /* DCPGradientView.m in Sources */,
+				38273ED316CF1B2000AB3B03 /* DCPColor.m in Sources */,
+				38310C7716D5D07F0098C6F5 /* DCPTaskOperationManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +436,7 @@
 				38F2526816CDEC870091B479 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
