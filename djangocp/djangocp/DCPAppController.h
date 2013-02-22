@@ -8,11 +8,14 @@
 
 #import "DCPBaseController.h"
 #import "DCPTaskOperationManager.h"
+#import "DCPVirtualEnvWizardController.h"
 
 @interface DCPAppController : DCPBaseController {
     
     DCPTaskOperationManager *taskManager;
-    
+
 }
+
+@property (unsafe_unretained) IBOutlet DCPVirtualEnvWizardController *virtualEnvWizard;
 
 @end

@@ -16,8 +16,10 @@
 
 @implementation DCPAppController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+@synthesize virtualEnvWizard;
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
@@ -28,16 +30,25 @@
         taskManager = [[DCPTaskOperationManager alloc] init];
         
         // CREATE YOUR FIRST VIRTUAL ENVIRONMENT!!!!
-        NSArray *params = [NSArray arrayWithObjects:@"--no-site-packages", @"--python=python2.7", @"djangocpdemo", nil];
-        [taskManager createEnvironment:@"djangocp" withParams:params];
+        //NSArray *params = [NSArray arrayWithObjects:@"--no-site-packages", @"--python=python2.7", @"djangocpdemo", nil];
+        //[taskManager createEnvironment:@"djangocp" withParams:params];
         
         // PYTHON PATH
         ///workspace/demo/ashierdemo/djangocpdemo/bin/python
-        
-        
+    
     }
     
     return self;
+}
+
+-(void) awakeFromNib {
+    if ([virtualEnvWizard view]){
+        [[virtualEnvWizard view] removeFromSuperview];
+    }
+    
+    [self.view addSubview:[virtualEnvWizard view]];
+    //[[virtualEnvWizard view] setFrame:[[self view] bounds]];
+    //[[virtualEnvWizard view] setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
 }
 
 @end
