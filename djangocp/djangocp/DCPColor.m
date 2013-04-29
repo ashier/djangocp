@@ -19,7 +19,7 @@
 }
 
 + (NSColor *)DARK_GRAY {
-    return [self colorWithHexColorString:@"242424"];
+    return [self colorWithHexColorString:@"222222"];
 }
 
 + (NSColor *)LIGHT_GRAY {

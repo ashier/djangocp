@@ -16,18 +16,16 @@
 
 @implementation DCPAppController
 
-@synthesize virtualEnvWizard;
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
         // USE BROWSE TO SET THIS UP EVENTUALLY
-        [self addDefaultsKey:[DCPUserDefaultKeys workspacePath] withValue:@"/workspace/demo/ashierdemo"];
+        //[self addDefaultsKey:[DCPUserDefaultKeys workspacePath] withValue:@"/workspace/demo/ashierdemo"];
         
         // CREATE TASK MANAGER
-        taskManager = [[DCPTaskOperationManager alloc] init];
+        // taskManager = [[DCPTaskOperationManager alloc] init];
         
         // CREATE YOUR FIRST VIRTUAL ENVIRONMENT!!!!
         //NSArray *params = [NSArray arrayWithObjects:@"--no-site-packages", @"--python=python2.7", @"djangocpdemo", nil];
@@ -41,14 +39,41 @@
     return self;
 }
 
--(void) awakeFromNib {
-    if ([virtualEnvWizard view]){
-        [[virtualEnvWizard view] removeFromSuperview];
+- (void) awakeFromNib {
+    [self prepareStatusItems];
+}
+
+- (void) prepareStatusItems {
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    [statusItem setImage:[NSImage imageNamed:@"status-icon.png"]];
+    [statusItem setMenu:statusMenu];
+    [statusItem setHighlightMode:YES];
+}
+
+- (void) prepareVirtualEnvWizardView {
+    if ([virtualEnvWizardController view]){
+        [[virtualEnvWizardController view] removeFromSuperview];
     }
     
-    [self.view addSubview:[virtualEnvWizard view]];
-    //[[virtualEnvWizard view] setFrame:[[self view] bounds]];
-    //[[virtualEnvWizard view] setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+    virtualEnvWizardController = [[DCPVirtualEnvWizardController alloc] initWithNibName:@"DCPVirtualEnvWizardView" bundle:nil];
+    [virtualEnvWizardController setDelegate:self];
+    
+    [self.view addSubview:[virtualEnvWizardController view]];
+    [[virtualEnvWizardController view] setFrame:[[self view] bounds]];
+    [[virtualEnvWizardController view] setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+}
+
+- (IBAction)showApplication:(id)sender {
+    // prepare window
+    [self prepareVirtualEnvWizardView];
+    
+    // show window
+    [NSApp activateIgnoringOtherApps:YES];
+    [mainWindow makeKeyAndOrderFront:nil];
+}
+
+- (IBAction)quitApplication:(id)sender {
+    [NSApp terminate:nil];
 }
 
 @end

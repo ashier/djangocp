@@ -10,12 +10,18 @@
 #import "DCPTaskOperationManager.h"
 #import "DCPVirtualEnvWizardController.h"
 
-@interface DCPAppController : DCPBaseController {
+@interface DCPAppController : DCPBaseController <DCPVirtualEnvWizardDelegate>{
     
     DCPTaskOperationManager *taskManager;
-
+    DCPVirtualEnvWizardController *virtualEnvWizardController;
+    
+    NSStatusItem *statusItem;
+    
+    IBOutlet NSWindow *mainWindow;
+    IBOutlet NSMenu *statusMenu;
 }
 
-@property (unsafe_unretained) IBOutlet DCPVirtualEnvWizardController *virtualEnvWizard;
+- (IBAction)showApplication:(id)sender;
+- (IBAction)quitApplication:(id)sender;
 
 @end

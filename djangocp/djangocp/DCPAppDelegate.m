@@ -19,7 +19,7 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
-    [window setBackgroundColor: DCPColor.LIGHT_GRAY];
+    [window setBackgroundColor: DCPColor.DARK_GRAY];
 }
 
 // Returns the directory the application uses to store the Core Data store file. This code uses a directory named "com.ashier.djangocp" in the user's Application Support directory.
@@ -135,10 +135,6 @@
     if (![[self managedObjectContext] save:&error]) {
         [[NSApplication sharedApplication] presentError:error];
     }
-}
-
-- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)sender{
-	return YES;
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender

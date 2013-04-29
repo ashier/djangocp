@@ -7,7 +7,25 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "DCPBaseController.h"
 
-@interface DCPVirtualEnvWizardController : NSViewController
+@protocol DCPVirtualEnvWizardDelegate;
+
+@interface DCPVirtualEnvWizardController : DCPBaseController
+
+#pragma mark - Delegate
+// ----------------------------------------------------
+// Delegate
+// ----------------------------------------------------
+@property (strong) id <DCPVirtualEnvWizardDelegate> delegate;
+
+
+
+@end
+
+@protocol DCPVirtualEnvWizardDelegate <NSObject>
+
+@optional
+- (void)didPackageInstall: (DCPVirtualEnvWizardController *)view;
 
 @end
