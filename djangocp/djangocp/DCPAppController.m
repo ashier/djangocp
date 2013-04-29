@@ -56,16 +56,29 @@
 }
 
 - (void)prepareVirtualEnvWizardView {
-    if ([virtualEnvWizardController view]){
-        [[virtualEnvWizardController view] removeFromSuperview];
+    if ([mainController view]){
+        [[mainController view] removeFromSuperview];
     }
     
-    virtualEnvWizardController = [[DCPVirtualEnvWizardController alloc] initWithNibName:@"DCPVirtualEnvWizardView" bundle:nil];
-    [virtualEnvWizardController setDelegate:self];
+    mainController = [[DCPMainController alloc] initWithNibName:@"DCPMainView" bundle:nil];
+    [mainController setDelegate:self];
     
-    [self.view addSubview:[virtualEnvWizardController view]];
-    [[virtualEnvWizardController view] setFrame:[[self view] bounds]];
-    [[virtualEnvWizardController view] setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
+    NSView *wizardView = [mainController view];
+    [mainWindow setContentSize:wizardView.frame.size];
+    [mainWindow setContentView:wizardView];
+    //NSRect viewScreenFrame = [self screenRectEquivelentOfView:wizardView];
+    //NSRect windowFrame = [mainWindow frameRectForContentRect:viewScreenFrame];
+    //[mainWindow setFrame:windowFrame display:YES animate:YES];
+    
+}
+
+- (NSRect)screenRectEquivelentOfView:(NSView*)view {
+    NSWindow* viewWindow = [view window];
+    
+    NSRect frame = [view frame];
+    frame = [[view superview] convertRect:frame toView:nil];
+    frame.origin = [viewWindow convertBaseToScreen:frame.origin];
+    return (frame);
 }
 
 #pragma mark - IBActions

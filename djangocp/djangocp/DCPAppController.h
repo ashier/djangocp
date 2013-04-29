@@ -8,12 +8,12 @@
 
 #import "DCPBaseController.h"
 #import "DCPTaskOperationManager.h"
-#import "DCPVirtualEnvWizardController.h"
+#import "DCPMainController.h"
 
-@interface DCPAppController : DCPBaseController <DCPVirtualEnvWizardDelegate>{
+@interface DCPAppController : DCPBaseController <DCPMainDelegate>{
     
     DCPTaskOperationManager *taskManager;
-    DCPVirtualEnvWizardController *virtualEnvWizardController;
+    DCPMainController *mainController;
     
     NSStatusItem *statusItem;
     
