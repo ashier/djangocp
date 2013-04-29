@@ -21,6 +21,11 @@
     IBOutlet NSMenu *statusMenu;
 }
 
+
+#pragma mark - IBActions
+// ----------------------------------------------------
+// IBActions
+// ----------------------------------------------------
 - (IBAction)showApplication:(id)sender;
 - (IBAction)quitApplication:(id)sender;
 

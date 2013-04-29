@@ -39,18 +39,23 @@
     return self;
 }
 
-- (void) awakeFromNib {
+#pragma mark - Class Methods
+// ----------------------------------------------------
+// Methods
+// ----------------------------------------------------
+
+- (void)awakeFromNib {
     [self prepareStatusItems];
 }
 
-- (void) prepareStatusItems {
+- (void)prepareStatusItems {
     statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     [statusItem setImage:[NSImage imageNamed:@"status-icon.png"]];
     [statusItem setMenu:statusMenu];
     [statusItem setHighlightMode:YES];
 }
 
-- (void) prepareVirtualEnvWizardView {
+- (void)prepareVirtualEnvWizardView {
     if ([virtualEnvWizardController view]){
         [[virtualEnvWizardController view] removeFromSuperview];
     }
@@ -63,8 +68,13 @@
     [[virtualEnvWizardController view] setAutoresizingMask:NSViewWidthSizable | NSViewHeightSizable];
 }
 
+#pragma mark - IBActions
+// ----------------------------------------------------
+// IBActions
+// ----------------------------------------------------
+
 - (IBAction)showApplication:(id)sender {
-    // prepare window
+    // prepare virtual environment wizard
     [self prepareVirtualEnvWizardView];
     
     // show window

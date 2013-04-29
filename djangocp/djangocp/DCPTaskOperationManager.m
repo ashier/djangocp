@@ -27,6 +27,11 @@
 }
 
 
+#pragma mark - Class Methods
+// ----------------------------------------------------
+// Class Methods
+// ----------------------------------------------------
+
 - (void)setupWithDistribute:(BOOL) value {
     
 }

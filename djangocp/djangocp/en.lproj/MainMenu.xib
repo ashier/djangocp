@@ -487,7 +487,7 @@
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{335, 390}, {700, 450}}</string>
 				<int key="NSWTFlags">1954021376</int>
-				<string key="NSWindowTitle">djangoCP</string>
+				<string key="NSWindowTitle"/>
 				<string key="NSWindowClass">NSWindow</string>
 				<nil key="NSViewClass"/>
 				<nil key="NSUserInterfaceItemIdentifier"/>
@@ -502,7 +502,6 @@
 							<string key="NSFrameSize">{700, 450}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<bool key="NSViewIsLayerTreeHost">YES</bool>
 							<object class="NSDictionary" key="NSViewAnimations">
 								<string key="NS.key.0">subviews</string>
@@ -1448,7 +1447,6 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="mainWindow">NSWindow</string>
 						<string key="statusMenu">NSMenu</string>
-						<string key="virtualEnvWizard">DCPVirtualEnvWizardController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="mainWindow">
@@ -1458,10 +1456,6 @@
 						<object class="IBToOneOutletInfo" key="statusMenu">
 							<string key="name">statusMenu</string>
 							<string key="candidateClassName">NSMenu</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="virtualEnvWizard">
-							<string key="name">virtualEnvWizard</string>
-							<string key="candidateClassName">DCPVirtualEnvWizardController</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -1509,7 +1503,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">DCPVirtualEnvWizardController</string>
-					<string key="superclassName">NSViewController</string>
+					<string key="superclassName">DCPBaseController</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/DCPVirtualEnvWizardController.h</string>
