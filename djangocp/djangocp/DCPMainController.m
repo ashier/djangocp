@@ -8,6 +8,7 @@
 
 #import "DCPMainController.h"
 #import "DCPColor.h"
+#import "DCPSolidColorView.h"
 
 @interface DCPMainController ()
 
@@ -15,21 +16,34 @@
 
 @implementation DCPMainController
 
-@synthesize header, subHeader;
+@synthesize header, subHeader, subHeaderHighlight;
 @synthesize delegate = _delegate;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        NSLog(@"Initialization DCPVirtualEnvironment");
-    }
-    
+    if (self) {}
     return self;
 }
 
+- (void)prepareSubHeader {
+    DCPSolidColorView *sh = (DCPSolidColorView *) [self subHeader];
+    [sh setBackgroundColor:DCPColor.BLUE];
+    [sh setNeedsDisplay:YES];
+    
+    DCPSolidColorView *shh = (DCPSolidColorView *) [self subHeaderHighlight];
+    [shh setBackgroundColor:DCPColor.HIGHLIGHT_BLUE];
+    [shh setNeedsDisplay:YES];
+}
+
+- (void)prepareHeader {
+    DCPSolidColorView *h = (DCPSolidColorView *) [self header];
+    [h setBackgroundColor:DCPColor.DARK_GRAY];
+    [h setNeedsDisplay:YES];
+}
+
 - (void)awakeFromNib {
-    //[subHeader setB
+    [self prepareHeader];
+    [self prepareSubHeader];
 }
 
 @end

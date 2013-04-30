@@ -44,7 +44,6 @@
 
 - (void)initTask {
     [self cleanup];
-    
     task = [[NSTask alloc] init];
     [task setCurrentDirectoryPath: environmentPath];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -60,8 +59,6 @@
                                              selector:@selector(handlePipeOutput:)
                                                  name:NSFileHandleReadToEndOfFileCompletionNotification
                                                object:outputPipe];
-    
-    
 }
 
 + (NSString *)executableBinPath {

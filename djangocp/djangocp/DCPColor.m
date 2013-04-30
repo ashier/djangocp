@@ -14,8 +14,12 @@
     return [self colorWithHexColorString:@"FFFFFF"];
 }
 
-+ (NSColor *)BLUE {
++ (NSColor *)HIGHLIGHT_BLUE {
     return [self colorWithHexColorString:@"6994e3"];
+}
+
++ (NSColor *)BLUE {
+    return [self colorWithHexColorString:@"4c74be"];
 }
 
 + (NSColor *)DARK_GRAY {

@@ -18,6 +18,7 @@
  */
 
 + (NSColor *)BLUE;
++ (NSColor *)HIGHLIGHT_BLUE;
 + (NSColor *)DARK_GRAY;
 + (NSColor *)LIGHT_GRAY;
 + (NSColor *)RED;

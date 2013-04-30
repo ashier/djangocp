@@ -15,6 +15,8 @@
 			<string>NSCustomView</string>
 			<string>NSImageCell</string>
 			<string>NSImageView</string>
+			<string>NSTextField</string>
+			<string>NSTextFieldCell</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -33,53 +35,6 @@
 			<object class="NSCustomObject" id="1004">
 				<string key="NSClassName">NSApplication</string>
 			</object>
-			<object class="NSCustomView" id="1005">
-				<nil key="NSNextResponder"/>
-				<int key="NSvFlags">4370</int>
-				<array class="NSMutableArray" key="NSSubviews"/>
-				<string key="NSFrameSize">{692, 362}</string>
-				<bool key="NSViewIsLayerTreeHost">YES</bool>
-				<string key="NSClassName">NSView</string>
-			</object>
-			<object class="NSCustomView" id="842536817">
-				<nil key="NSNextResponder"/>
-				<int key="NSvFlags">268</int>
-				<array class="NSMutableArray" key="NSSubviews">
-					<object class="NSImageView" id="1004569959">
-						<reference key="NSNextResponder" ref="842536817"/>
-						<int key="NSvFlags">256</int>
-						<set class="NSMutableSet" key="NSDragTypes">
-							<string>Apple PDF pasteboard type</string>
-							<string>Apple PICT pasteboard type</string>
-							<string>Apple PNG pasteboard type</string>
-							<string>NSFilenamesPboardType</string>
-							<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
-							<string>NeXT TIFF v4.0 pasteboard type</string>
-						</set>
-						<string key="NSFrame">{{20, 18}, {100, 25}}</string>
-						<reference key="NSSuperview" ref="842536817"/>
-						<bool key="NSEnabled">YES</bool>
-						<object class="NSImageCell" key="NSCell" id="809469198">
-							<int key="NSCellFlags">0</int>
-							<int key="NSCellFlags2">33554432</int>
-							<object class="NSCustomResource" key="NSContents" id="821020090">
-								<string key="NSClassName">NSImage</string>
-								<string key="NSResourceName">logo</string>
-							</object>
-							<int key="NSAlign">0</int>
-							<int key="NSScale">0</int>
-							<int key="NSStyle">0</int>
-							<bool key="NSAnimates">YES</bool>
-						</object>
-						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
-						<bool key="NSEditable">YES</bool>
-					</object>
-				</array>
-				<string key="NSFrameSize">{670, 60}</string>
-				<reference key="NSNextKeyView" ref="1004569959"/>
-				<string key="NSReuseIdentifierKey">_NS:9</string>
-				<string key="NSClassName">NSView</string>
-			</object>
 			<object class="NSCustomView" id="299012888">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">268</int>
@@ -87,11 +42,94 @@
 					<object class="NSCustomView" id="283887949">
 						<reference key="NSNextResponder" ref="299012888"/>
 						<int key="NSvFlags">266</int>
-						<string key="NSFrame">{{0, 275}, {722, 65}}</string>
+						<array class="NSMutableArray" key="NSSubviews">
+							<object class="NSCustomView" id="246964247">
+								<reference key="NSNextResponder" ref="283887949"/>
+								<int key="NSvFlags">266</int>
+								<string key="NSFrame">{{0, 63}, {700, 5}}</string>
+								<reference key="NSSuperview" ref="283887949"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="549608686"/>
+								<string key="NSReuseIdentifierKey">_NS:9</string>
+								<string key="NSClassName">DCPSolidColorView</string>
+							</object>
+							<object class="NSTextField" id="989592333">
+								<reference key="NSNextResponder" ref="283887949"/>
+								<int key="NSvFlags">268</int>
+								<string key="NSFrame">{{17, 7}, {423, 27}}</string>
+								<reference key="NSSuperview" ref="283887949"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
+								<string key="NSReuseIdentifierKey">_NS:1535</string>
+								<bool key="NSEnabled">YES</bool>
+								<object class="NSTextFieldCell" key="NSCell" id="802947249">
+									<int key="NSCellFlags">68157504</int>
+									<int key="NSCellFlags2">272630784</int>
+									<string key="NSContents">/workspace/my projects/github projects/</string>
+									<object class="NSFont" key="NSSupport">
+										<string key="NSName">Aller-LightItalic</string>
+										<double key="NSSize">12</double>
+										<int key="NSfFlags">16</int>
+									</object>
+									<string key="NSCellIdentifier">_NS:1535</string>
+									<reference key="NSControlView" ref="989592333"/>
+									<object class="NSColor" key="NSBackgroundColor" id="407877661">
+										<int key="NSColorSpace">6</int>
+										<string key="NSCatalogName">System</string>
+										<string key="NSColorName">controlColor</string>
+										<object class="NSColor" key="NSColor">
+											<int key="NSColorSpace">3</int>
+											<bytes key="NSWhite">MC42NjY2NjY2NjY3AA</bytes>
+										</object>
+									</object>
+									<object class="NSColor" key="NSTextColor" id="306816184">
+										<int key="NSColorSpace">1</int>
+										<bytes key="NSRGB">MSAxIDEAA</bytes>
+									</object>
+								</object>
+								<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+							</object>
+							<object class="NSTextField" id="549608686">
+								<reference key="NSNextResponder" ref="283887949"/>
+								<int key="NSvFlags">268</int>
+								<string key="NSFrame">{{17, 31}, {423, 27}}</string>
+								<reference key="NSSuperview" ref="283887949"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="989592333"/>
+								<object class="NSShadow" key="NSViewShadow">
+									<double key="NSShadowHoriz">1</double>
+									<double key="NSShadowVert">1</double>
+									<object class="NSColor" key="NSShadowColor" id="604345642">
+										<int key="NSColorSpace">1</int>
+										<bytes key="NSRGB">MC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMgMC4yMDAwMDAwMDMAA</bytes>
+									</object>
+								</object>
+								<string key="NSReuseIdentifierKey">_NS:1535</string>
+								<bool key="NSEnabled">YES</bool>
+								<object class="NSTextFieldCell" key="NSCell" id="889324974">
+									<int key="NSCellFlags">68157504</int>
+									<int key="NSCellFlags2">272630784</int>
+									<string key="NSContents">Django Projects Virtual Environment 1</string>
+									<object class="NSFont" key="NSSupport">
+										<string key="NSName">Aller-Light</string>
+										<double key="NSSize">18</double>
+										<int key="NSfFlags">16</int>
+									</object>
+									<string key="NSCellIdentifier">_NS:1535</string>
+									<reference key="NSControlView" ref="549608686"/>
+									<reference key="NSBackgroundColor" ref="407877661"/>
+									<reference key="NSTextColor" ref="306816184"/>
+								</object>
+								<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+							</object>
+						</array>
+						<string key="NSFrame">{{0, 325}, {700, 65}}</string>
 						<reference key="NSSuperview" ref="299012888"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="246964247"/>
+						<bool key="NSViewIsLayerTreeHost">YES</bool>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<string key="NSClassName">NSView</string>
+						<string key="NSClassName">DCPSolidColorView</string>
 					</object>
 					<object class="NSCustomView" id="258292179">
 						<reference key="NSNextResponder" ref="299012888"/>
@@ -116,7 +154,10 @@
 								<object class="NSImageCell" key="NSCell" id="21451489">
 									<int key="NSCellFlags">0</int>
 									<int key="NSCellFlags2">33554432</int>
-									<reference key="NSContents" ref="821020090"/>
+									<object class="NSCustomResource" key="NSContents">
+										<string key="NSClassName">NSImage</string>
+										<string key="NSResourceName">logo</string>
+									</object>
 									<int key="NSAlign">0</int>
 									<int key="NSScale">0</int>
 									<int key="NSStyle">0</int>
@@ -126,15 +167,15 @@
 								<bool key="NSEditable">YES</bool>
 							</object>
 						</array>
-						<string key="NSFrame">{{0, 340}, {722, 60}}</string>
+						<string key="NSFrame">{{0, 390}, {700, 60}}</string>
 						<reference key="NSSuperview" ref="299012888"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="138902190"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
-						<string key="NSClassName">NSView</string>
+						<string key="NSClassName">DCPSolidColorView</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{722, 400}</string>
+				<string key="NSFrameSize">{700, 450}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="258292179"/>
@@ -144,14 +185,6 @@
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">header</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="842536817"/>
-					</object>
-					<int key="connectionID">63</int>
-				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">view</string>
@@ -166,7 +199,23 @@
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="283887949"/>
 					</object>
-					<int key="connectionID">71</int>
+					<int key="connectionID">72</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">header</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="258292179"/>
+					</object>
+					<int key="connectionID">73</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">subHeaderHighlight</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="246964247"/>
+					</object>
+					<int key="connectionID">80</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -194,33 +243,6 @@
 						<reference key="object" ref="1004"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Application</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">1</int>
-						<reference key="object" ref="1005"/>
-						<array class="NSMutableArray" key="children"/>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">60</int>
-						<reference key="object" ref="842536817"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="1004569959"/>
-						</array>
-						<reference key="parent" ref="0"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">61</int>
-						<reference key="object" ref="1004569959"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="809469198"/>
-						</array>
-						<reference key="parent" ref="842536817"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">62</int>
-						<reference key="object" ref="809469198"/>
-						<reference key="parent" ref="1004569959"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">68</int>
@@ -255,7 +277,43 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">70</int>
 						<reference key="object" ref="283887949"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="989592333"/>
+							<reference ref="549608686"/>
+							<reference ref="246964247"/>
+						</array>
 						<reference key="parent" ref="299012888"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">74</int>
+						<reference key="object" ref="549608686"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="889324974"/>
+						</array>
+						<reference key="parent" ref="283887949"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">75</int>
+						<reference key="object" ref="889324974"/>
+						<reference key="parent" ref="549608686"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">76</int>
+						<reference key="object" ref="989592333"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="802947249"/>
+						</array>
+						<reference key="parent" ref="283887949"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">77</int>
+						<reference key="object" ref="802947249"/>
+						<reference key="parent" ref="989592333"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">78</int>
+						<reference key="object" ref="246964247"/>
+						<reference key="parent" ref="283887949"/>
 					</object>
 				</array>
 			</object>
@@ -263,29 +321,33 @@
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="-3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<real value="0.0" key="1.IBViewIntegration.shadowBlurRadius"/>
-				<object class="NSColor" key="1.IBViewIntegration.shadowColor">
-					<int key="NSColorSpace">3</int>
-					<bytes key="NSWhite">MAA</bytes>
-				</object>
-				<real value="0.0" key="1.IBViewIntegration.shadowOffsetHeight"/>
-				<real value="0.0" key="1.IBViewIntegration.shadowOffsetWidth"/>
-				<string key="60.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="60.userInterfaceItemIdentifier">header</string>
-				<string key="61.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="62.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="64.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="65.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="66.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="68.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="70.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="74.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<real value="0.0" key="74.IBViewIntegration.shadowBlurRadius"/>
+				<reference key="74.IBViewIntegration.shadowColor" ref="604345642"/>
+				<real value="1" key="74.IBViewIntegration.shadowOffsetHeight"/>
+				<real value="1" key="74.IBViewIntegration.shadowOffsetWidth"/>
+				<string key="75.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="76.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<real value="0.0" key="76.IBViewIntegration.shadowBlurRadius"/>
+				<object class="NSColor" key="76.IBViewIntegration.shadowColor">
+					<int key="NSColorSpace">3</int>
+					<bytes key="NSWhite">MAA</bytes>
+				</object>
+				<real value="0.0" key="76.IBViewIntegration.shadowOffsetHeight"/>
+				<real value="0.0" key="76.IBViewIntegration.shadowOffsetWidth"/>
+				<string key="77.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="78.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">71</int>
+			<int key="maxID">80</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -301,22 +363,35 @@
 					<string key="className">DCPMainController</string>
 					<string key="superclassName">DCPBaseController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="header">NSView</string>
-						<string key="subHeader">NSView</string>
+						<string key="header">DCPSolidColorView</string>
+						<string key="subHeader">DCPSolidColorView</string>
+						<string key="subHeaderHighlight">DCPSolidColorView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="header">
 							<string key="name">header</string>
-							<string key="candidateClassName">NSView</string>
+							<string key="candidateClassName">DCPSolidColorView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="subHeader">
 							<string key="name">subHeader</string>
-							<string key="candidateClassName">NSView</string>
+							<string key="candidateClassName">DCPSolidColorView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="subHeaderHighlight">
+							<string key="name">subHeaderHighlight</string>
+							<string key="candidateClassName">DCPSolidColorView</string>
 						</object>
 					</dictionary>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/DCPMainController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">DCPSolidColorView</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/DCPSolidColorView.h</string>
 					</object>
 				</object>
 			</array>

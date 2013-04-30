@@ -8,10 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "DCPBaseController.h"
+#import "DCPSolidColorView.h"
 
 @protocol DCPMainDelegate;
 
-@interface DCPMainController : DCPBaseController
+@interface DCPMainController : DCPBaseController {
+}
 
 #pragma mark - Delegate
 // ----------------------------------------------------
@@ -24,11 +26,17 @@
 // ----------------------------------------------------
 // IBOutlet
 // ----------------------------------------------------
-@property (strong) IBOutlet NSView *header;
-@property (strong) IBOutlet NSView *subHeader;
+@property (strong) IBOutlet DCPSolidColorView *header;
+@property (strong) IBOutlet DCPSolidColorView *subHeader;
+@property (strong) IBOutlet DCPSolidColorView *subHeaderHighlight;
 
 @end
 
+
+#pragma mark - Protocol
+// ----------------------------------------------------
+// Protocol
+// ----------------------------------------------------
 @protocol DCPMainDelegate <NSObject>
 
 @optional
