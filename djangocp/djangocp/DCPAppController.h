@@ -13,7 +13,6 @@
 
 @interface DCPAppController : DCPBaseController <DCPMainDelegate>{
     
-@private
     DCPTaskOperationManager *taskManager;
     DCPMainController *mainController;
     DCPPreferencesController *preferencesController;
@@ -23,6 +22,12 @@
     IBOutlet NSWindow *mainWindow;
     IBOutlet NSMenu *statusMenu;
 }
+
+#pragma mark - Class Methods
+// ----------------------------------------------------
+// IBActions
+// ----------------------------------------------------
+- (void)showPreferenceWindow;
 
 #pragma mark - IBActions
 // ----------------------------------------------------

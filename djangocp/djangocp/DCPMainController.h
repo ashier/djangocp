@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "DCPBaseController.h"
 #import "DCPSolidColorView.h"
+#import "DCPPreferencesController.h"
 
 @protocol DCPMainDelegate;
 
@@ -29,6 +30,13 @@
 @property (strong) IBOutlet DCPSolidColorView *header;
 @property (strong) IBOutlet DCPSolidColorView *subHeader;
 @property (strong) IBOutlet DCPSolidColorView *subHeaderHighlight;
+
+
+#pragma mark - IBActions
+// ----------------------------------------------------
+// IBActions
+// ----------------------------------------------------
+- (IBAction)onShowPreferences:(id)sender;
 
 @end
 

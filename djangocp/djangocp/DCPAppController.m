@@ -18,7 +18,6 @@
 @implementation DCPAppController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
@@ -101,6 +100,10 @@
 }
 
 - (IBAction)showPreferences:(id)sender {
+    [self showPreferenceWindow];
+}
+
+- (void)showPreferenceWindow {
     if (!preferencesController) {
         preferencesController = [[DCPPreferencesController alloc] initWithWindowNibName:@"DCPPreferencesWindow"];
     }

@@ -6,8 +6,9 @@
 //  Copyright (c) 2013 Ashier de Leon. All rights reserved.
 //
 
-#import "DCPMainController.h"
 #import "DCPColor.h"
+#import "DCPAppController.h"
+#import "DCPMainController.h"
 #import "DCPSolidColorView.h"
 
 @interface DCPMainController ()
@@ -26,17 +27,17 @@
 }
 
 - (void)prepareSubHeader {
-    DCPSolidColorView *sh = (DCPSolidColorView *) [self subHeader];
+    DCPSolidColorView *sh = [self subHeader];
     [sh setBackgroundColor:DCPColor.BLUE];
     [sh setNeedsDisplay:YES];
     
-    DCPSolidColorView *shh = (DCPSolidColorView *) [self subHeaderHighlight];
+    DCPSolidColorView *shh = [self subHeaderHighlight];
     [shh setBackgroundColor:DCPColor.HIGHLIGHT_BLUE];
     [shh setNeedsDisplay:YES];
 }
 
 - (void)prepareHeader {
-    DCPSolidColorView *h = (DCPSolidColorView *) [self header];
+    DCPSolidColorView *h = [self header];
     [h setBackgroundColor:DCPColor.DARK_GRAY];
     [h setNeedsDisplay:YES];
 }
@@ -46,4 +47,8 @@
     [self prepareSubHeader];
 }
 
+- (IBAction)onShowPreferences:(id)sender {
+    DCPAppController * appController = (DCPAppController *) _delegate;
+    [appController showPreferenceWindow];
+}
 @end
