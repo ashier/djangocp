@@ -33,6 +33,16 @@
 		38F2528116CDFAA80091B479 /* DCPSolidColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F2528016CDFAA80091B479 /* DCPSolidColorView.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		38E9C6A017305FB700D77735 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38F2523E16CDEC870091B479 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38E9C68D17304B3500D77735;
+			remoteInfo = "dcpcommand-service";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		38273ED116CF1B2000AB3B03 /* DCPColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPColor.h; sourceTree = "<group>"; };
 		38273ED216CF1B2000AB3B03 /* DCPColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPColor.m; sourceTree = "<group>"; };
@@ -313,10 +323,12 @@
 				38F2524216CDEC870091B479 /* Sources */,
 				38F2524316CDEC870091B479 /* Frameworks */,
 				38F2524416CDEC870091B479 /* Resources */,
+				38E9C69F173055A600D77735 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				38E9C6A117305FB700D77735 /* PBXTargetDependency */,
 			);
 			name = djangocp;
 			productName = djangocp;
@@ -377,6 +389,22 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		38E9C69F173055A600D77735 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "buildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber-alpha\" \"$INFOPLIST_FILE\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		38E9C68A17304B3500D77735 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -406,6 +434,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38E9C6A117305FB700D77735 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38E9C68D17304B3500D77735 /* dcpcommand-service */;
+			targetProxy = 38E9C6A017305FB700D77735 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		38E9C69417304B3500D77735 /* InfoPlist.strings */ = {

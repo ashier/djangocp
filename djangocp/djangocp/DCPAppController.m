@@ -21,9 +21,10 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        NSString *version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
-        NSString *build = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"];
-        [self addDefaultsKey:[DCPUserDefaultKeys appVersion] withValue:[[version stringByAppendingString:@"."] stringByAppendingString:build]];
+        NSMutableString *version = [[NSMutableString alloc] initWithFormat:@"%@.%@",
+                                    [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"],
+                                    [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"]];
+        [self addDefaultsKey:[DCPUserDefaultKeys appVersion] withValue:version];
         NSLog(@"version : %@", [self getDefaultsWithKey:[DCPUserDefaultKeys appVersion]]);
         
         // USE BROWSE TO SET THIS UP EVENTUALLY
