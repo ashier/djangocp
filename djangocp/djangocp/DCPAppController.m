@@ -9,6 +9,7 @@
 #import "DCPAppController.h"
 #import "DCPTaskOperationManager.h"
 #import "DCPUserDefaultKeys.h"
+#import "DCPPreferencesController.h"
 
 @interface DCPAppController ()
 
@@ -97,6 +98,13 @@
 
 - (IBAction)quitApplication:(id)sender {
     [NSApp terminate:nil];
+}
+
+- (IBAction)showPreferences:(id)sender {
+    if (!preferencesController) {
+        preferencesController = [[DCPPreferencesController alloc] initWithWindowNibName:@"DCPPreferencesWindow"];
+    }
+    [preferencesController showWindow:self];
 }
 
 @end
