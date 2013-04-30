@@ -13,6 +13,12 @@
 		38488CC616D70F0B007CA4C6 /* DCPMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38488CC416D70F0B007CA4C6 /* DCPMainView.xib */; };
 		38738F01172EAD9C00F031A5 /* status-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 38738F00172EAD9C00F031A5 /* status-icon.png */; };
 		38738F03172EB65600F031A5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38738F02172EB65600F031A5 /* logo.png */; };
+		38E9C5F317302E0100D77735 /* DCPPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38E9C5F217302E0100D77735 /* DCPPreferencesWindow.xib */; };
+		38E9C5F617302EDF00D77735 /* DCPPreferencesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E9C5F517302EDF00D77735 /* DCPPreferencesController.m */; };
+		38E9C69017304B3500D77735 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E9C68F17304B3500D77735 /* Foundation.framework */; };
+		38E9C69617304B3500D77735 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38E9C69417304B3500D77735 /* InfoPlist.strings */; };
+		38E9C69917304B3500D77735 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38E9C69817304B3500D77735 /* main.m */; };
+		38E9C69E17304B5400D77735 /* dcpcommand-service.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 38E9C69D17304B5400D77735 /* dcpcommand-service.entitlements */; };
 		38F2524A16CDEC870091B479 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2524916CDEC870091B479 /* Cocoa.framework */; };
 		38F2525416CDEC870091B479 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 38F2525216CDEC870091B479 /* InfoPlist.strings */; };
 		38F2525616CDEC870091B479 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F2525516CDEC870091B479 /* main.m */; };
@@ -24,7 +30,7 @@
 		38F2527716CDF83F0091B479 /* DCPAppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F2527616CDF83F0091B479 /* DCPAppController.m */; };
 		38F2527A16CDF9320091B479 /* DCPTaskOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F2527916CDF9320091B479 /* DCPTaskOperation.m */; };
 		38F2527D16CDF9550091B479 /* DCPUserDefaultKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F2527C16CDF9550091B479 /* DCPUserDefaultKeys.m */; };
-		38F2528116CDFAA80091B479 /* DCPGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F2528016CDFAA80091B479 /* DCPGradientView.m */; };
+		38F2528116CDFAA80091B479 /* DCPSolidColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38F2528016CDFAA80091B479 /* DCPSolidColorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,16 @@
 		38488CC416D70F0B007CA4C6 /* DCPMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCPMainView.xib; sourceTree = "<group>"; };
 		38738F00172EAD9C00F031A5 /* status-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-icon.png"; sourceTree = "<group>"; };
 		38738F02172EB65600F031A5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		38E9C5F217302E0100D77735 /* DCPPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCPPreferencesWindow.xib; sourceTree = "<group>"; };
+		38E9C5F417302EDF00D77735 /* DCPPreferencesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPPreferencesController.h; sourceTree = "<group>"; };
+		38E9C5F517302EDF00D77735 /* DCPPreferencesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPPreferencesController.m; sourceTree = "<group>"; };
+		38E9C68E17304B3500D77735 /* com.ashier.dcpcommand-service.xpc */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "com.ashier.dcpcommand-service.xpc"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38E9C68F17304B3500D77735 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		38E9C69317304B3500D77735 /* dcpcommand-service-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "dcpcommand-service-Info.plist"; sourceTree = "<group>"; };
+		38E9C69517304B3500D77735 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		38E9C69717304B3500D77735 /* dcpcommand-service-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dcpcommand-service-Prefix.pch"; sourceTree = "<group>"; };
+		38E9C69817304B3500D77735 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		38E9C69D17304B5400D77735 /* dcpcommand-service.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "dcpcommand-service.entitlements"; sourceTree = "<group>"; };
 		38F2524616CDEC870091B479 /* djangocp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = djangocp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38F2524916CDEC870091B479 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		38F2524C16CDEC870091B479 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -60,11 +76,19 @@
 		38F2527916CDF9320091B479 /* DCPTaskOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPTaskOperation.m; sourceTree = "<group>"; };
 		38F2527B16CDF9550091B479 /* DCPUserDefaultKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPUserDefaultKeys.h; sourceTree = "<group>"; };
 		38F2527C16CDF9550091B479 /* DCPUserDefaultKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPUserDefaultKeys.m; sourceTree = "<group>"; };
-		38F2527F16CDFAA80091B479 /* DCPGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPGradientView.h; sourceTree = "<group>"; };
-		38F2528016CDFAA80091B479 /* DCPGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPGradientView.m; sourceTree = "<group>"; };
+		38F2527F16CDFAA80091B479 /* DCPSolidColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPSolidColorView.h; sourceTree = "<group>"; };
+		38F2528016CDFAA80091B479 /* DCPSolidColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPSolidColorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		38E9C68B17304B3500D77735 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38E9C69017304B3500D77735 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38F2524316CDEC870091B479 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,10 +109,31 @@
 			name = Managers;
 			sourceTree = "<group>";
 		};
+		38E9C69117304B3500D77735 /* dcpcommand-service */ = {
+			isa = PBXGroup;
+			children = (
+				38E9C69817304B3500D77735 /* main.m */,
+				38E9C69217304B3500D77735 /* Supporting Files */,
+			);
+			path = "dcpcommand-service";
+			sourceTree = "<group>";
+		};
+		38E9C69217304B3500D77735 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				38E9C69317304B3500D77735 /* dcpcommand-service-Info.plist */,
+				38E9C69417304B3500D77735 /* InfoPlist.strings */,
+				38E9C69717304B3500D77735 /* dcpcommand-service-Prefix.pch */,
+				38E9C69D17304B5400D77735 /* dcpcommand-service.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		38F2523D16CDEC870091B479 = {
 			isa = PBXGroup;
 			children = (
 				38F2524F16CDEC870091B479 /* djangocp */,
+				38E9C69117304B3500D77735 /* dcpcommand-service */,
 				38F2524816CDEC870091B479 /* Frameworks */,
 				38F2524716CDEC870091B479 /* Products */,
 			);
@@ -98,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				38F2524616CDEC870091B479 /* djangocp.app */,
+				38E9C68E17304B3500D77735 /* com.ashier.dcpcommand-service.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				38F2524916CDEC870091B479 /* Cocoa.framework */,
+				38E9C68F17304B3500D77735 /* Foundation.framework */,
 				38F2524B16CDEC870091B479 /* Other Frameworks */,
 			);
 			name = Frameworks;
@@ -166,6 +213,7 @@
 			children = (
 				38F2525E16CDEC870091B479 /* MainMenu.xib */,
 				38488CC416D70F0B007CA4C6 /* DCPMainView.xib */,
+				38E9C5F217302E0100D77735 /* DCPPreferencesWindow.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -197,6 +245,8 @@
 				38F2527616CDF83F0091B479 /* DCPAppController.m */,
 				38488CC216D70F0B007CA4C6 /* DCPMainController.h */,
 				38488CC316D70F0B007CA4C6 /* DCPMainController.m */,
+				38E9C5F417302EDF00D77735 /* DCPPreferencesController.h */,
+				38E9C5F517302EDF00D77735 /* DCPPreferencesController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -230,8 +280,8 @@
 		38F2527E16CDFA7F0091B479 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				38F2527F16CDFAA80091B479 /* DCPGradientView.h */,
-				38F2528016CDFAA80091B479 /* DCPGradientView.m */,
+				38F2527F16CDFAA80091B479 /* DCPSolidColorView.h */,
+				38F2528016CDFAA80091B479 /* DCPSolidColorView.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -239,6 +289,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		38E9C68D17304B3500D77735 /* dcpcommand-service */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38E9C69C17304B3500D77735 /* Build configuration list for PBXNativeTarget "dcpcommand-service" */;
+			buildPhases = (
+				38E9C68A17304B3500D77735 /* Sources */,
+				38E9C68B17304B3500D77735 /* Frameworks */,
+				38E9C68C17304B3500D77735 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dcpcommand-service";
+			productName = "dcpcommand-service";
+			productReference = 38E9C68E17304B3500D77735 /* com.ashier.dcpcommand-service.xpc */;
+			productType = "com.apple.product-type.bundle";
+		};
 		38F2524516CDEC870091B479 /* djangocp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38F2526616CDEC870091B479 /* Build configuration list for PBXNativeTarget "djangocp" */;
@@ -279,11 +346,21 @@
 			projectRoot = "";
 			targets = (
 				38F2524516CDEC870091B479 /* djangocp */,
+				38E9C68D17304B3500D77735 /* dcpcommand-service */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		38E9C68C17304B3500D77735 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38E9C69617304B3500D77735 /* InfoPlist.strings in Resources */,
+				38E9C69E17304B5400D77735 /* dcpcommand-service.entitlements in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38F2524416CDEC870091B479 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,12 +371,21 @@
 				38488CC616D70F0B007CA4C6 /* DCPMainView.xib in Resources */,
 				38738F01172EAD9C00F031A5 /* status-icon.png in Resources */,
 				38738F03172EB65600F031A5 /* logo.png in Resources */,
+				38E9C5F317302E0100D77735 /* DCPPreferencesWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		38E9C68A17304B3500D77735 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38E9C69917304B3500D77735 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38F2524216CDEC870091B479 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -311,16 +397,25 @@
 				38F2527716CDF83F0091B479 /* DCPAppController.m in Sources */,
 				38F2527A16CDF9320091B479 /* DCPTaskOperation.m in Sources */,
 				38F2527D16CDF9550091B479 /* DCPUserDefaultKeys.m in Sources */,
-				38F2528116CDFAA80091B479 /* DCPGradientView.m in Sources */,
+				38F2528116CDFAA80091B479 /* DCPSolidColorView.m in Sources */,
 				38273ED316CF1B2000AB3B03 /* DCPColor.m in Sources */,
 				38310C7716D5D07F0098C6F5 /* DCPTaskOperationManager.m in Sources */,
 				38488CC516D70F0B007CA4C6 /* DCPMainController.m in Sources */,
+				38E9C5F617302EDF00D77735 /* DCPPreferencesController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		38E9C69417304B3500D77735 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				38E9C69517304B3500D77735 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		38F2525216CDEC870091B479 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -348,6 +443,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		38E9C69A17304B3500D77735 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dcpcommand-service/dcpcommand-service-Prefix.pch";
+				INFOPLIST_FILE = "dcpcommand-service/dcpcommand-service-Info.plist";
+				MACH_O_TYPE = mh_execute;
+				PRODUCT_NAME = "com.ashier.$(TARGET_NAME:rfc1034identifier)";
+				WRAPPER_EXTENSION = xpc;
+			};
+			name = Debug;
+		};
+		38E9C69B17304B3500D77735 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "dcpcommand-service/dcpcommand-service-Prefix.pch";
+				INFOPLIST_FILE = "dcpcommand-service/dcpcommand-service-Info.plist";
+				MACH_O_TYPE = mh_execute;
+				PRODUCT_NAME = "com.ashier.$(TARGET_NAME:rfc1034identifier)";
+				WRAPPER_EXTENSION = xpc;
+			};
+			name = Release;
+		};
 		38F2526416CDEC870091B479 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -438,6 +559,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		38E9C69C17304B3500D77735 /* Build configuration list for PBXNativeTarget "dcpcommand-service" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38E9C69A17304B3500D77735 /* Debug */,
+				38E9C69B17304B3500D77735 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		38F2524116CDEC870091B479 /* Build configuration list for PBXProject "djangocp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
