@@ -13,6 +13,7 @@
 #define WORKSPACE_PATH @"WORKSPACE_PATH";
 #define CONFIG_COMPLETE @"CONFIG_COMPLETE";
 #define VIRTUALPY_URL @"https://raw.github.com/pypa/virtualenv/master/virtualenv.py";
+#define APPLICATION_VERSION @"APPLICATION_VERSION"; 
 
 + (NSString *)workspacePath {
     return WORKSPACE_PATH;
@@ -24,6 +25,10 @@
 
 + (NSString *)virtualpyURL {
     return VIRTUALPY_URL;
+}
+
++ (NSString *)appVersion {
+    return APPLICATION_VERSION;
 }
 
 @end

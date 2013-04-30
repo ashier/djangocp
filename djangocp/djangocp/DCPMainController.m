@@ -10,6 +10,7 @@
 #import "DCPAppController.h"
 #import "DCPMainController.h"
 #import "DCPSolidColorView.h"
+#import "DCPUserDefaultKeys.h"
 
 @interface DCPMainController ()
 
@@ -22,7 +23,9 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {}
+    if (self) {
+       applicationVersion = [self getDefaultsWithKey:[DCPUserDefaultKeys appVersion]];
+    }
     return self;
 }
 

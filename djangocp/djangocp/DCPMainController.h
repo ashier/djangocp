@@ -14,6 +14,7 @@
 @protocol DCPMainDelegate;
 
 @interface DCPMainController : DCPBaseController {
+    NSString *applicationVersion;
 }
 
 #pragma mark - Delegate

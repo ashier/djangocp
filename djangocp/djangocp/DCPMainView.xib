@@ -19,6 +19,7 @@
 			<string>NSImageView</string>
 			<string>NSTextField</string>
 			<string>NSTextFieldCell</string>
+			<string>NSUserDefaultsController</string>
 		</array>
 		<array key="IBDocument.PluginDependencies">
 			<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -137,6 +138,35 @@
 						<reference key="NSNextResponder" ref="299012888"/>
 						<int key="NSvFlags">266</int>
 						<array class="NSMutableArray" key="NSSubviews">
+							<object class="NSTextField" id="350156166">
+								<reference key="NSNextResponder" ref="258292179"/>
+								<int key="NSvFlags">268</int>
+								<string key="NSFrame">{{521, 46}, {175, 14}}</string>
+								<reference key="NSSuperview" ref="258292179"/>
+								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="138902190"/>
+								<double key="NSViewAlphaValue">0.5</double>
+								<string key="NSReuseIdentifierKey">_NS:1535</string>
+								<bool key="NSEnabled">YES</bool>
+								<object class="NSTextFieldCell" key="NSCell" id="708374402">
+									<int key="NSCellFlags">68157504</int>
+									<int key="NSCellFlags2">71304192</int>
+									<string key="NSContents"/>
+									<object class="NSFont" key="NSSupport">
+										<string key="NSName">Aller-LightItalic</string>
+										<double key="NSSize">10</double>
+										<int key="NSfFlags">16</int>
+									</object>
+									<string key="NSCellIdentifier">_NS:1535</string>
+									<reference key="NSControlView" ref="350156166"/>
+									<reference key="NSBackgroundColor" ref="872633433"/>
+									<object class="NSColor" key="NSTextColor">
+										<int key="NSColorSpace">1</int>
+										<bytes key="NSRGB">MC4yNDgwMDQ0MTU4IDAuMjQ4MDA0NDE1OCAwLjI0ODAwNDQxNTgAA</bytes>
+									</object>
+								</object>
+								<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+							</object>
 							<object class="NSButton" id="895248880">
 								<reference key="NSNextResponder" ref="258292179"/>
 								<int key="NSvFlags">265</int>
@@ -206,7 +236,7 @@
 						<string key="NSFrame">{{0, 390}, {700, 60}}</string>
 						<reference key="NSSuperview" ref="299012888"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="138902190"/>
+						<reference key="NSNextKeyView" ref="350156166"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSClassName">DCPSolidColorView</string>
 					</object>
@@ -217,6 +247,9 @@
 				<reference key="NSNextKeyView" ref="258292179"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">NSView</string>
+			</object>
+			<object class="NSUserDefaultsController" id="17279013">
+				<bool key="NSSharedInstance">YES</bool>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
@@ -261,6 +294,22 @@
 					</object>
 					<int key="connectionID">93</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
+						<string key="label">value: self.applicationVersion</string>
+						<reference key="source" ref="350156166"/>
+						<reference key="destination" ref="1001"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="350156166"/>
+							<reference key="NSDestination" ref="1001"/>
+							<string key="NSLabel">value: self.applicationVersion</string>
+							<string key="NSBinding">value</string>
+							<string key="NSKeyPath">self.applicationVersion</string>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">102</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -303,6 +352,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="138902190"/>
 							<reference ref="895248880"/>
+							<reference ref="350156166"/>
 						</array>
 						<reference key="parent" ref="299012888"/>
 					</object>
@@ -373,6 +423,24 @@
 						<reference key="object" ref="743482167"/>
 						<reference key="parent" ref="895248880"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">94</int>
+						<reference key="object" ref="350156166"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="708374402"/>
+						</array>
+						<reference key="parent" ref="258292179"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">95</int>
+						<reference key="object" ref="708374402"/>
+						<reference key="parent" ref="350156166"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">96</int>
+						<reference key="object" ref="17279013"/>
+						<reference key="parent" ref="0"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -402,12 +470,15 @@
 				<string key="78.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="91.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="92.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="94.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="95.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="96.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 			</dictionary>
 			<dictionary class="NSMutableDictionary" key="unlocalizedProperties"/>
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">93</int>
+			<int key="maxID">102</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">

@@ -10,6 +10,7 @@
 
 @interface DCPUserDefaultKeys : NSObject
 
++ (NSString *)appVersion;
 + (NSString *)workspacePath;
 + (NSString *)configComplete;
 + (NSString *)virtualpyURL;

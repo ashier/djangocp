@@ -21,6 +21,11 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
+        NSString *version = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"];
+        NSString *build = [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"];
+        [self addDefaultsKey:[DCPUserDefaultKeys appVersion] withValue:[[version stringByAppendingString:@"."] stringByAppendingString:build]];
+        NSLog(@"version : %@", [self getDefaultsWithKey:[DCPUserDefaultKeys appVersion]]);
+        
         // USE BROWSE TO SET THIS UP EVENTUALLY
         //[self addDefaultsKey:[DCPUserDefaultKeys workspacePath] withValue:@"/workspace/demo/ashierdemo"];
         
@@ -108,6 +113,8 @@
         preferencesController = [[DCPPreferencesController alloc] initWithWindowNibName:@"DCPPreferencesWindow"];
     }
     [preferencesController showWindow:self];
+    [NSApp activateIgnoringOtherApps:YES];
+    [[preferencesController window] makeKeyAndOrderFront:nil];
 }
 
 @end
