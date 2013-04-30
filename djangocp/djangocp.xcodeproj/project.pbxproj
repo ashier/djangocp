@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		38273ED316CF1B2000AB3B03 /* DCPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 38273ED216CF1B2000AB3B03 /* DCPColor.m */; };
 		38310C7716D5D07F0098C6F5 /* DCPTaskOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 38310C7616D5D07F0098C6F5 /* DCPTaskOperationManager.m */; };
-		38488CC516D70F0B007CA4C6 /* DCPVirtualEnvWizardController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38488CC316D70F0B007CA4C6 /* DCPVirtualEnvWizardController.m */; };
-		38488CC616D70F0B007CA4C6 /* DCPVirtualEnvWizardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38488CC416D70F0B007CA4C6 /* DCPVirtualEnvWizardView.xib */; };
+		38488CC516D70F0B007CA4C6 /* DCPMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 38488CC316D70F0B007CA4C6 /* DCPMainController.m */; };
+		38488CC616D70F0B007CA4C6 /* DCPMainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 38488CC416D70F0B007CA4C6 /* DCPMainView.xib */; };
 		38738F01172EAD9C00F031A5 /* status-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 38738F00172EAD9C00F031A5 /* status-icon.png */; };
 		38738F03172EB65600F031A5 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 38738F02172EB65600F031A5 /* logo.png */; };
 		38F2524A16CDEC870091B479 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38F2524916CDEC870091B479 /* Cocoa.framework */; };
@@ -32,9 +32,9 @@
 		38273ED216CF1B2000AB3B03 /* DCPColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPColor.m; sourceTree = "<group>"; };
 		38310C7516D5D07F0098C6F5 /* DCPTaskOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPTaskOperationManager.h; sourceTree = "<group>"; };
 		38310C7616D5D07F0098C6F5 /* DCPTaskOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPTaskOperationManager.m; sourceTree = "<group>"; };
-		38488CC216D70F0B007CA4C6 /* DCPVirtualEnvWizardController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPVirtualEnvWizardController.h; sourceTree = "<group>"; };
-		38488CC316D70F0B007CA4C6 /* DCPVirtualEnvWizardController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPVirtualEnvWizardController.m; sourceTree = "<group>"; };
-		38488CC416D70F0B007CA4C6 /* DCPVirtualEnvWizardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCPVirtualEnvWizardView.xib; sourceTree = "<group>"; };
+		38488CC216D70F0B007CA4C6 /* DCPMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCPMainController.h; sourceTree = "<group>"; };
+		38488CC316D70F0B007CA4C6 /* DCPMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCPMainController.m; sourceTree = "<group>"; };
+		38488CC416D70F0B007CA4C6 /* DCPMainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DCPMainView.xib; sourceTree = "<group>"; };
 		38738F00172EAD9C00F031A5 /* status-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status-icon.png"; sourceTree = "<group>"; };
 		38738F02172EB65600F031A5 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		38F2524616CDEC870091B479 /* djangocp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = djangocp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,7 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				38F2525E16CDEC870091B479 /* MainMenu.xib */,
-				38488CC416D70F0B007CA4C6 /* DCPVirtualEnvWizardView.xib */,
+				38488CC416D70F0B007CA4C6 /* DCPMainView.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -195,8 +195,8 @@
 			children = (
 				38F2527516CDF83F0091B479 /* DCPAppController.h */,
 				38F2527616CDF83F0091B479 /* DCPAppController.m */,
-				38488CC216D70F0B007CA4C6 /* DCPVirtualEnvWizardController.h */,
-				38488CC316D70F0B007CA4C6 /* DCPVirtualEnvWizardController.m */,
+				38488CC216D70F0B007CA4C6 /* DCPMainController.h */,
+				38488CC316D70F0B007CA4C6 /* DCPMainController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -291,7 +291,7 @@
 				38F2525416CDEC870091B479 /* InfoPlist.strings in Resources */,
 				38F2525A16CDEC870091B479 /* Credits.rtf in Resources */,
 				38F2526016CDEC870091B479 /* MainMenu.xib in Resources */,
-				38488CC616D70F0B007CA4C6 /* DCPVirtualEnvWizardView.xib in Resources */,
+				38488CC616D70F0B007CA4C6 /* DCPMainView.xib in Resources */,
 				38738F01172EAD9C00F031A5 /* status-icon.png in Resources */,
 				38738F03172EB65600F031A5 /* logo.png in Resources */,
 			);
@@ -314,7 +314,7 @@
 				38F2528116CDFAA80091B479 /* DCPGradientView.m in Sources */,
 				38273ED316CF1B2000AB3B03 /* DCPColor.m in Sources */,
 				38310C7716D5D07F0098C6F5 /* DCPTaskOperationManager.m in Sources */,
-				38488CC516D70F0B007CA4C6 /* DCPVirtualEnvWizardController.m in Sources */,
+				38488CC516D70F0B007CA4C6 /* DCPMainController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

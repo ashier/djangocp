@@ -2,12 +2,15 @@
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12D78" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Apps" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="apps_project" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Projects" inverseName="project_apps" inverseEntity="Projects" syncable="YES"/>
     </entity>
     <entity name="Environments" syncable="YES">
+        <attribute name="dir_name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="environment_projects" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Projects" inverseName="projects_environment" inverseEntity="Projects" syncable="YES"/>
+        <relationship name="environment_workspace" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Workspace" inverseName="workspace_environments" inverseEntity="Workspace" syncable="YES"/>
     </entity>
     <entity name="Projects" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
@@ -16,9 +19,15 @@
         <relationship name="project_apps" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Apps" inverseName="apps_project" inverseEntity="Apps" syncable="YES"/>
         <relationship name="projects_environment" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Environments" inverseName="environment_projects" inverseEntity="Environments" syncable="YES"/>
     </entity>
+    <entity name="Workspace" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="workspace_environments" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Environments" inverseName="environment_workspace" inverseEntity="Environments" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Environments" positionX="261" positionY="245" width="180" height="88"/>
-        <element name="Projects" positionX="-27" positionY="245" width="198" height="118"/>
-        <element name="Apps" positionX="-27" positionY="107" width="173" height="73"/>
+        <element name="Environments" positionX="297" positionY="251" width="180" height="118"/>
+        <element name="Projects" positionX="-27" positionY="243" width="198" height="118"/>
+        <element name="Apps" positionX="-27" positionY="90" width="173" height="88"/>
+        <element name="Workspace" positionX="207" positionY="72" width="128" height="90"/>
     </elements>
 </model>

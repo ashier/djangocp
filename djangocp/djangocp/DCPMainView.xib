@@ -90,7 +90,6 @@
 						<string key="NSFrame">{{0, 275}, {722, 65}}</string>
 						<reference key="NSSuperview" ref="299012888"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSClassName">NSView</string>
 					</object>
