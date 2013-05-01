@@ -19,7 +19,7 @@
     if (self = [super init]){
         useDistribute = YES;
         
-        task = [[DCPTaskOperation alloc] init];
+        task = [[DCPTask alloc] init];
         [task initTask];
         
     }

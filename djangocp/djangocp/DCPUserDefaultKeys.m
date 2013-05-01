@@ -13,7 +13,8 @@
 #define WORKSPACE_PATH @"WORKSPACE_PATH";
 #define CONFIG_COMPLETE @"CONFIG_COMPLETE";
 #define VIRTUALPY_URL @"https://raw.github.com/pypa/virtualenv/master/virtualenv.py";
-#define APPLICATION_VERSION @"APPLICATION_VERSION"; 
+#define APPLICATION_VERSION @"APPLICATION_VERSION";
+#define EXECUTABLE_BIN @".djangocp/bin"
 
 + (NSString *)workspacePath {
     return WORKSPACE_PATH;
@@ -29,6 +30,10 @@
 
 + (NSString *)appVersion {
     return APPLICATION_VERSION;
+}
+
++ (NSString *)executableBin {
+    return EXECUTABLE_BIN;
 }
 
 @end

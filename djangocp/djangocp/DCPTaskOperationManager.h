@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DCPTaskOperation.h"
+#import "DCPTask.h"
 
 @interface DCPTaskOperationManager : NSObject {
-    DCPTaskOperation * task;
+    DCPTask * task;
     BOOL useDistribute;
 }
 

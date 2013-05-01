@@ -7,9 +7,10 @@
 //
 
 #import "DCPAppController.h"
-#import "DCPTaskOperationManager.h"
+#import "DCPTaskResponse.h"
 #import "DCPUserDefaultKeys.h"
 #import "DCPPreferencesController.h"
+#import "DCPCommandProtocol.h"
 
 @interface DCPAppController ()
 
@@ -17,31 +18,15 @@
 
 @implementation DCPAppController
 
+@synthesize commandService;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
-        NSMutableString *version = [[NSMutableString alloc] initWithFormat:@"%@.%@",
-                                    [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"],
-                                    [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"]];
-        [self addDefaultsKey:[DCPUserDefaultKeys appVersion] withValue:version];
-        NSLog(@"version : %@", [self getDefaultsWithKey:[DCPUserDefaultKeys appVersion]]);
-        
-        // USE BROWSE TO SET THIS UP EVENTUALLY
-        //[self addDefaultsKey:[DCPUserDefaultKeys workspacePath] withValue:@"/workspace/demo/ashierdemo"];
-        
-        // CREATE TASK MANAGER
-        // taskManager = [[DCPTaskOperationManager alloc] init];
-        
-        // CREATE YOUR FIRST VIRTUAL ENVIRONMENT!!!!
-        //NSArray *params = [NSArray arrayWithObjects:@"--no-site-packages", @"--python=python2.7", @"djangocpdemo", nil];
-        //[taskManager createEnvironment:@"djangocp" withParams:params];
-        
-        // PYTHON PATH
-        ///workspace/demo/ashierdemo/djangocpdemo/bin/python
-    
+        [self initializeApplicationVersion];
+        [self initializeCommandService];
+        [self initializeServiceAgent];
     }
-    
     return self;
 }
 
@@ -52,6 +37,48 @@
 
 - (void)awakeFromNib {
     [self prepareStatusItems];
+}
+
+- (void) initializeApplicationVersion {
+    NSMutableString *version = [[NSMutableString alloc] initWithFormat:@"%@.%@",
+                                [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleShortVersionString"],
+                                [[[NSBundle mainBundle] infoDictionary] valueForKey:@"CFBundleVersion"]];
+    [self addDefaultsKey:[DCPUserDefaultKeys appVersion] withValue:version];
+    NSLog(@"version : %@", [self getDefaultsWithKey:[DCPUserDefaultKeys appVersion]]);
+}
+
+- (void)initializeCommandService {
+    commandService = [[NSXPCConnection alloc] initWithServiceName:@"com.ashier.dcpcommand-service"];
+    commandService.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(DCPCommandProtocol)];
+    [commandService resume];
+    
+    serviceAgent = [commandService remoteObjectProxyWithErrorHandler:^(NSError *error) {
+        NSLog(@"Darn an error occurred: %@", error);
+    }];
+}
+
+- (void)initializeServiceAgent {
+    NSMutableString *path = [[NSMutableString alloc] initWithString:[defaults valueForKey:[DCPUserDefaultKeys workspacePath]]];
+    [path appendString:@"/"];
+    [path appendString:[DCPUserDefaultKeys executableBin]];
+    
+    NSString *envPath = [defaults valueForKey:[DCPUserDefaultKeys workspacePath]];
+    NSString *execPath = path;
+    
+    NSLog(@"%@ ~ %@", envPath, execPath);
+    [serviceAgent initializeWithEnvironmentPath:envPath
+                             withExecutablePath:execPath
+                                          reply:^(DCPTaskResponse *response) {
+                                              NSLog(@"Created a task: %@", response);
+                                              [commandService invalidate];
+                                          }];
+}
+
+- (void) showNotificationWithTitle:(NSString *)title withSubTitle:(NSString *)subtitle {
+    NSUserNotification *note = [[NSUserNotification alloc] init];
+    note.title = title;
+    note.subtitle = subtitle;
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:note];
 }
 
 - (void)prepareStatusItems {
@@ -75,7 +102,6 @@
     //NSRect viewScreenFrame = [self screenRectEquivelentOfView:wizardView];
     //NSRect windowFrame = [mainWindow frameRectForContentRect:viewScreenFrame];
     //[mainWindow setFrame:windowFrame display:YES animate:YES];
-    
 }
 
 - (NSRect)screenRectEquivelentOfView:(NSView*)view {

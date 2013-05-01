@@ -493,7 +493,7 @@
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{700, 450}</string>
 				<object class="NSView" key="NSWindowView" id="439893737">
-					<reference key="NSNextResponder"/>
+					<nil key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSCustomView" id="522480527">
@@ -518,7 +518,6 @@
 						</object>
 					</array>
 					<string key="NSFrameSize">{700, 450}</string>
-					<reference key="NSSuperview"/>
 					<reference key="NSNextKeyView" ref="522480527"/>
 					<bool key="NSViewIsLayerTreeHost">YES</bool>
 				</object>
@@ -766,6 +765,14 @@
 						<reference key="destination" ref="240196151"/>
 					</object>
 					<int key="connectionID">732</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">onCheckForUpdates:</string>
+						<reference key="source" ref="846178548"/>
+						<reference key="destination" ref="218591429"/>
+					</object>
+					<int key="connectionID">733</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1429,7 +1436,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">732</int>
+			<int key="maxID">733</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1515,6 +1522,20 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">DCPMainController</string>
 					<string key="superclassName">DCPBaseController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="onCheckForUpdates:">id</string>
+						<string key="onShowPreferences:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="onCheckForUpdates:">
+							<string key="name">onCheckForUpdates:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="onShowPreferences:">
+							<string key="name">onShowPreferences:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="header">DCPSolidColorView</string>
 						<string key="subHeader">DCPSolidColorView</string>

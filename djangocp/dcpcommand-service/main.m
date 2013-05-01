@@ -6,41 +6,33 @@
 //  Copyright (c) 2013 Ashier de Leon. All rights reserved.
 //
 
-#include <xpc/xpc.h>
 #include <Foundation/Foundation.h>
+#import "DCPCommandProtocol.h"
+#import "DCPTask.h"
+#import "DCPTaskResponse.h"
+#import "DCPCommandAgent.h"
 
-static void dcpcommand_service_peer_event_handler(xpc_connection_t peer, xpc_object_t event)  {
-	xpc_type_t type = xpc_get_type(event);
-	if (type == XPC_TYPE_ERROR) {
-		if (event == XPC_ERROR_CONNECTION_INVALID) {
-			// The client process on the other end of the connection has either
-			// crashed or cancelled the connection. After receiving this error,
-			// the connection is in an invalid state, and you do not need to
-			// call xpc_connection_cancel(). Just tear down any associated state
-			// here.
-		} else if (event == XPC_ERROR_TERMINATION_IMMINENT) {
-			// Handle per-connection termination cleanup.
-		}
-	} else {
-		assert(type == XPC_TYPE_DICTIONARY);
-		// Handle the message.
-	}
+@interface DCPCommandDelegate : NSObject <NSXPCListenerDelegate>
+@end
+
+@implementation DCPCommandDelegate
+
+
+- (BOOL)listener:(NSXPCListener *)listener shouldAcceptNewConnection:(NSXPCConnection *)newConnection {
+	newConnection.exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(DCPCommandProtocol)];
+    DCPCommandAgent *agent = [DCPCommandAgent new];
+    newConnection.exportedObject = agent;
+	[newConnection resume];
+	return YES;
 }
 
-static void dcpcommand_service_event_handler(xpc_connection_t peer)  {
-	// By defaults, new connections will target the default dispatch
-	// concurrent queue.
-	xpc_connection_set_event_handler(peer, ^(xpc_object_t event) {
-		dcpcommand_service_peer_event_handler(peer, event);
-	});
-	
-	// This will tell the connection to begin listening for events. If you
-	// have some other initialization that must be done asynchronously, then
-	// you can defer this call until after that initialization is done.
-	xpc_connection_resume(peer);
-}
+@end
+
 
 int main(int argc, const char *argv[]) {
-	xpc_main(dcpcommand_service_event_handler);
+	NSXPCListener *listener = [NSXPCListener serviceListener];
+	DCPCommandDelegate *delegate = [DCPCommandDelegate new];
+	listener.delegate = delegate;
+	[listener resume];
 	return 0;
 }

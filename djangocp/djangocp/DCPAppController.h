@@ -10,6 +10,7 @@
 #import "DCPTaskOperationManager.h"
 #import "DCPMainController.h"
 #import "DCPPreferencesController.h"
+#import "DCPCommandProtocol.h"
 
 @interface DCPAppController : DCPBaseController <DCPMainDelegate>{
     
@@ -18,10 +19,14 @@
     DCPPreferencesController *preferencesController;
     
     NSStatusItem *statusItem;
+    id<DCPCommandProtocol> serviceAgent;
     
     IBOutlet NSWindow *mainWindow;
     IBOutlet NSMenu *statusMenu;
 }
+
+@property (readwrite) NSXPCConnection *commandService;
+
 
 #pragma mark - Class Methods
 // ----------------------------------------------------

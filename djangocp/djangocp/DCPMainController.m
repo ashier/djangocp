@@ -18,7 +18,7 @@
 
 @implementation DCPMainController
 
-@synthesize header, subHeader, subHeaderHighlight;
+@synthesize header, subHeader, subHeaderHighlight, workspacePath;
 @synthesize delegate = _delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -53,5 +53,19 @@
 - (IBAction)onShowPreferences:(id)sender {
     DCPAppController * appController = (DCPAppController *) _delegate;
     [appController showPreferenceWindow];
+}
+
+- (IBAction)onCheckForUpdates:(id)sender {
+    NSOpenPanel *browseWorkspace = [NSOpenPanel openPanel];
+    [browseWorkspace setCanChooseDirectories:YES];
+    [browseWorkspace setAllowsMultipleSelection:NO];
+    [browseWorkspace beginSheetModalForWindow:[[self view] window] completionHandler:^(NSInteger returnCode) {
+         if (returnCode == NSOKButton) {
+             NSURL * path = [browseWorkspace directoryURL];
+             [self setWorkspacePath:[path relativePath]];
+             [self addDefaultsKey:[DCPUserDefaultKeys workspacePath] withValue:workspacePath];
+             NSLog(@"defaults workspacePath = %@", [self getDefaultsWithKey:[DCPUserDefaultKeys workspacePath]]);
+         }
+     }];
 }
 @end

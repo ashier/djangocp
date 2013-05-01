@@ -14,5 +14,6 @@
 + (NSString *)workspacePath;
 + (NSString *)configComplete;
 + (NSString *)virtualpyURL;
++ (NSString *)executableBin;
 
 @end

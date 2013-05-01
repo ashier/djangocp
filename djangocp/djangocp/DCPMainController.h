@@ -15,6 +15,7 @@
 
 @interface DCPMainController : DCPBaseController {
     NSString *applicationVersion;
+    NSString *workspacePath;
 }
 
 #pragma mark - Delegate
@@ -22,6 +23,7 @@
 // Delegate
 // ----------------------------------------------------
 @property (strong) id <DCPMainDelegate> delegate;
+@property (readwrite) NSString *workspacePath;
 
 
 #pragma mark - IBOutlet
@@ -38,6 +40,7 @@
 // IBActions
 // ----------------------------------------------------
 - (IBAction)onShowPreferences:(id)sender;
+- (IBAction)onCheckForUpdates:(id)sender;
 
 @end
 
